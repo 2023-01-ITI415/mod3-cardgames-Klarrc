@@ -247,9 +247,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1562936a756fd4b7ea7a17c136a28843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardSprites: {fileID: 0}
-  prefabCard: {fileID: 0}
-  prefabSprite: {fileID: 0}
+  cardSprites: {fileID: 11400000, guid: bf0e0af05a05f44018d7b720c8582ff8, type: 2}
+  prefabCard: {fileID: 5925831737227415241, guid: 186dc5adb181041769451fd4a4b6fe02,
+    type: 3}
+  prefabSprite: {fileID: 1000014090761352, guid: 30a6ba41f0d264815a76b64a60ee0b62,
+    type: 3}
   startFaceUp: 1
   deckAnchor: {fileID: 0}
   cards: []
