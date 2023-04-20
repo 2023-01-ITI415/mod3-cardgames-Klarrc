@@ -120,6 +120,26 @@ public class Prospector : MonoBehaviour
             cp.faceUp = faceUp;
         }
     }
+    void CheckForGameOver() {
+        if (mine.Count == 0) {
+            GameOver(true);
+            return;
+        }
+        if (drawPile.Count > 0) return;
+        foreach (CardProspector cp in mine) {
+            if (target.AdjacentTo(cp)) return;
+        }
+        GameOver(false);
+    }
+    void GameOver(bool won){
+        if (won) {
+            Debug.Log("Game Over. You Won! :)");
+        } else{
+            Debug.Log("Game Over. You Lost. :(");
+        }
+        CardSpritesSO.RESET();
+        SceneManager.LoadScene("__Prospector_Scene_0");
+    }
     static public void CARD_CLICKED(CardProspector cp) {
         switch (cp.state) {
             case eCardState.target:
@@ -138,5 +158,6 @@ public class Prospector : MonoBehaviour
             }
             break;
         }
+        S.CheckForGameOver();
     }
 }
