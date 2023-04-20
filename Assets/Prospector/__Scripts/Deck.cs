@@ -17,10 +17,12 @@ public class Deck : MonoBehaviour
     private JsonParseDeck jsonDeck;
     static public GameObject SPRITE_PREFAB {get; private set;}
     // Start is called before the first frame update
-    void Start()
+    /* void Start()
     {
         InitDeck();
+        Shuffle(ref cards);
     }
+    */
     public void InitDeck(){
         SPRITE_PREFAB = prefabSprite;
         cardSprites.Init();
@@ -50,5 +52,15 @@ public class Deck : MonoBehaviour
         Card card = go.GetComponent<Card>();
         card.Init(suit, rank, startFaceUp);
         return card;
+    }
+    static public void Shuffle(ref List<Card> refCards) {
+        List<Card> tCards = new List <Card>();
+        int ndx;
+        while (refCards.Count > 0) {
+            ndx = Random.Range(0,refCards.Count);
+            tCards.Add (refCards[ndx]);
+            refCards.RemoveAt(ndx);
+        }
+        refCards = tCards;
     }
 }
