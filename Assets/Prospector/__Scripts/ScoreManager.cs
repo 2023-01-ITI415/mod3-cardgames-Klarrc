@@ -6,7 +6,9 @@ public enum eScoreEvent {
     draw,
     mine,
     gameWin,
-    gameLoss
+    gameLoss,
+    mineSilver,
+    mineGold
 }
 public class ScoreManager : MonoBehaviour
 {
@@ -28,6 +30,7 @@ public class ScoreManager : MonoBehaviour
     public int chain = 0;
     public int scoreRun = 0;
     public int score = 0;
+    public static int multiplier = 1;
 
     [Header("Check this box to reset the ProspectorHighScore to 100")]
     public bool checkToResetHighScore = false;
@@ -50,11 +53,22 @@ public class ScoreManager : MonoBehaviour
                 chain++;
                 scoreRun+= chain;
                 break;
+            case eScoreEvent.mineGold:
+                multiplier += 1;
+                chain += 1;
+                scoreRun += chain;
+                break;
+            case eScoreEvent.mineSilver:
+                chain += 1;
+                scoreRun += chain;
+                chain += 1;
+                scoreRun += chain;
+                break;
             case eScoreEvent.draw:
             case eScoreEvent.gameWin:
             case eScoreEvent.gameLoss:
                 chain = 0;
-                score += scoreRun;
+                score += scoreRun * multiplier;
                 scoreRun = 0;
                 break;
         }
@@ -112,6 +126,8 @@ public class ScoreManager : MonoBehaviour
         List<Vector2> fsPts;
         switch (evt) {
         case eScoreEvent.mine:
+        case eScoreEvent.mineGold:
+        case eScoreEvent.mineSilver:
             GameObject go = Instantiate<GameObject>(floatingScorePrefab);
             go.transform.SetParent(canvasTrans);
             go.transform.localScale = Vector3.one;

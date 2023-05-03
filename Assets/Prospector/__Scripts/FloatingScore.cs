@@ -19,7 +19,7 @@ public class FloatingScore : MonoBehaviour
         get {return (_score);}
         set {
             _score = value;
-            textField.text = _score.ToString("#,##0");
+            textField.text = _score.ToString("#,##0") + " x " + ScoreManager.multiplier;
         }
     }
     public delegate void FloatingScoreDelegate(FloatingScore fs);

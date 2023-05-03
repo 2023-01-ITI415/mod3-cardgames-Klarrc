@@ -29,6 +29,7 @@ public class ScoreBoard : MonoBehaviour
         set {S.score = value;}
     }
     static public void FS_CALLBACK(FloatingScore fs) {
-        SCORE += fs.score;
+        SCORE += fs.score * ScoreManager.multiplier;
+        ScoreManager.multiplier = 1; 
     }
 }
