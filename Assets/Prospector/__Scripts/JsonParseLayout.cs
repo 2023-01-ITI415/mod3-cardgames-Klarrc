@@ -33,6 +33,7 @@ public class JsonLayoutPile {
     public int x, y;
     public string layer;
     public float xStagger;
+    public float yStagger;
 }
 public class JsonParseLayout : MonoBehaviour
 {

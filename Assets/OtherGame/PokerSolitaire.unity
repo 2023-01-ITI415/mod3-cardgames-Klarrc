@@ -197,9 +197,10 @@ GameObject:
   - component: {fileID: 827460512}
   - component: {fileID: 827460510}
   - component: {fileID: 827460509}
-  - component: {fileID: 827460514}
   - component: {fileID: 827460516}
   - component: {fileID: 827460515}
+  - component: {fileID: 827460514}
+  - component: {fileID: 827460517}
   m_Layer: 0
   m_Name: _MainCamera
   m_TagString: MainCamera
@@ -290,22 +291,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 827460508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f96ce8b3248994784a972b64ffe5fc80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jsonDeckFile: {fileID: 4900000, guid: 0d67a3015a5a242839235e17af363862, type: 3}
-  deck:
-    decorators: []
-    cards: []
---- !u!114 &827460515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827460508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35cd2f34527b6489e97a6968f3e9ffee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -318,12 +303,14 @@ MonoBehaviour:
       y: 0
       layer: 
       xStagger: 0
+      yStagger: 0
     discardPile:
       x: 0
       y: 0
       layer: 
       xStagger: 0
---- !u!114 &827460516
+      yStagger: 0
+--- !u!114 &827460515
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -341,5 +328,36 @@ MonoBehaviour:
   prefabSprite: {fileID: 1000014090761352, guid: 30a6ba41f0d264815a76b64a60ee0b62,
     type: 3}
   startFaceUp: 1
+  GoldCards: 0
+  SilverCards: 0
   deckAnchor: {fileID: 0}
   cards: []
+--- !u!114 &827460516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827460508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96ce8b3248994784a972b64ffe5fc80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonDeckFile: {fileID: 4900000, guid: caff80825454742cba113312425f8137, type: 3}
+  deck:
+    decorators: []
+    cards: []
+--- !u!114 &827460517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827460508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 654fc1766f5df4707b8e930e322b6ce7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawPile: []

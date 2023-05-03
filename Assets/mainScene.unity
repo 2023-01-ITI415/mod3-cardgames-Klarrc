@@ -1075,7 +1075,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Golf Solitaire
+  m_Text: Poker Solitaire
 --- !u!222 &1350879169
 CanvasRenderer:
   m_ObjectHideFlags: 0

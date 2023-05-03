@@ -14,6 +14,6 @@ public class SceneStart : MonoBehaviour
 
     public void LoadScene2()
     {
-        SceneManager.LoadScene("GolfSolitaire");
+        SceneManager.LoadScene("PokerSolitaire");
     }
 }
