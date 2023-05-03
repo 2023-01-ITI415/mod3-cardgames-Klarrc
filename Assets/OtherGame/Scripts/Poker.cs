@@ -12,6 +12,7 @@ public class Poker : MonoBehaviour
     private JsonLayout jsonLayout;
     private Deck deck;
     private Transform layoutAnchor;
+    public GameObject Blank_Card;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,10 @@ public class Poker : MonoBehaviour
         deck.InitDeck();
         Deck.Shuffle(ref deck.cards);
         drawPile = deck.cards;
+        while(drawPile.Count > 25){
+            drawPile[25].gameObject.SetActive(false);
+            drawPile.RemoveAt(25);
+        }
         Layout();
     }
     void Layout(){
@@ -55,6 +60,7 @@ public class Poker : MonoBehaviour
             cp.SetSpriteSortingLayer(jsonLayout.drawPile.layer);
             cp.SetSortingOrder(-10 * i);
         }
+        drawPile[0].faceUp = true;
     }
 
     // Update is called once per frame

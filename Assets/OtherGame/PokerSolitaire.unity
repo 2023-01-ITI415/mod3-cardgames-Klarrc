@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardSprites: {fileID: 11400000, guid: bf0e0af05a05f44018d7b720c8582ff8, type: 2}
-  prefabCard: {fileID: 5925831737227415241, guid: 186dc5adb181041769451fd4a4b6fe02,
+  prefabCard: {fileID: 5925831737227415241, guid: d033d9d03bd4e49909bb7780c3542955,
     type: 3}
   prefabSprite: {fileID: 1000014090761352, guid: 30a6ba41f0d264815a76b64a60ee0b62,
     type: 3}
@@ -361,3 +361,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawPile: []
+  Blank_Card: {fileID: 7473801653059568990, guid: a264605ee6e654937bad10af82d1c9ca,
+    type: 3}
