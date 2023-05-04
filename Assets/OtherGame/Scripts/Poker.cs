@@ -99,7 +99,7 @@ public class Poker : MonoBehaviour
         S.rows[card.y] ++;
         for(int i = 0; i < 5; i++){
             if(S.cols[i] == 5){
-                S.cols[1] ++;
+                S.cols[i] ++;
                 List<Card> hand = new List<Card>();
                 hand.Add(S.cards[i, 0]);
                 hand.Add(S.cards[i, 1]);
@@ -109,7 +109,7 @@ public class Poker : MonoBehaviour
                 S.score += Evaluate(hand);
             }
             if(S.rows[i] == 5){
-                S.rows[1] ++;
+                S.rows[i] ++;
                 List<Card> hand = new List<Card>();
                 hand.Add(S.cards[0, i]);
                 hand.Add(S.cards[1, i]);
