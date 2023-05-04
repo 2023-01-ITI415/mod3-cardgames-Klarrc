@@ -13,8 +13,8 @@ public class Poker : MonoBehaviour
     private Deck deck;
     private Transform layoutAnchor;
     public GameObject Blank_Card;
-    public int x = -6;
-    public int y = -7;
+    static public int x = -6;
+    static public int y = -7;
     public int[] rows = new int[5];
     public int[] cols = new int[5];
     // Start is called before the first frame update
@@ -42,7 +42,7 @@ public class Poker : MonoBehaviour
 
         for(int i = 0; i < 5; i ++){
             for(int j = 0; j <5; j ++){
-                GameObject bc = Instantiate(Blank_Card, new Vector3(i * 4 - x, j * 4 - y, 0), Quaternion.identity);
+                GameObject bc = Instantiate(Blank_Card, new Vector3(i * 4 + x, j * 4 + y, 0), Quaternion.identity);
                 bc.GetComponent<Blank_Card>().x = i;
                 bc.GetComponent<Blank_Card>().y = j;
             }
@@ -84,7 +84,7 @@ public class Poker : MonoBehaviour
     }
     static public void CARD_CLICKED(Blank_Card card){
         Card c = S.Draw();
-        c.transform.position = new Vector3(card.x * 4 - x, card.y * 4 - y, -1);
+        c.transform.position = new Vector3(card.x * 4 + x, card.y * 4 + y, -1);
         S.cards[card.x, card.y] = c;
         S.cols[card.x] ++;
         S.rows[card.y] ++;
