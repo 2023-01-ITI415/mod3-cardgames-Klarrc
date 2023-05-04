@@ -131,7 +131,7 @@ public class Poker : MonoBehaviour
         }
         PlayerPrefs.SetInt("High Score", highscore);
         highScoreText.text = $"High Score: {highscore:#,###}";
-        Invoke("Reload", 4f);
+        Invoke("Reload", 2f);
     }
     void Reload(){
         SceneManager.LoadScene("PokerSolitaire");
